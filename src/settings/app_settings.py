@@ -23,3 +23,10 @@ SCREEN_HEIGHT = 800
 #SCREEN_WIDTH = int(infoObject.current_w * 0.8)  # 80% of the screen width
 #SCREEN_HEIGHT = int(infoObject.current_h * 0.8)  # 80% of the screen height
 FPS = 60 # Frames per second
+
+# Initialize mixer for audio
+pygame.mixer.init()
+MUSIC_VOLUME = 0.5
+SFX_VOLUME = 0.5
+pygame.mixer.music.set_volume(MUSIC_VOLUME)
+# Apply SFX volume in your sound effect handlers

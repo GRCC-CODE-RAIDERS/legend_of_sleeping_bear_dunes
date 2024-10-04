@@ -31,6 +31,9 @@ class SettingsScreen:
         # Define a rect for the back button with smaller size
         self.back_button = pygame.Rect(50, self.screen.get_height() - 80, 100, 30)
 
+        # Add default audio settings
+        self.music_volume = 0.5  # Default music volume
+        self.sfx_volume = 0.5    # Default sound effects volume
 
     def draw_text(self, text, x, y):
         """
@@ -73,6 +76,11 @@ class SettingsScreen:
             # Draw the back button
             pygame.draw.rect(self.screen, (0, 0, 0), self.back_button)
             self.draw_text('Back', self.back_button.x + 50, self.back_button.y + 15)
+
+            # Add audio settings
+            self.draw_text('Music Volume', 200, 200)
+            self.draw_text(f"{int(self.music_volume * 100)}%", 400, 200)
+            # Implement sliders for adjusting volume
 
             pygame.display.flip()
             self.clock.tick(60)
